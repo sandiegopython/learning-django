@@ -1,0 +1,46 @@
+{
+ "styles": {
+  "normal": {
+   "fontSize": "125%"
+  }
+ }, 
+ "pageSetup": {
+  "spacing-footer": "0mm", 
+  "margin-gutter": "0cm", 
+  "margin-left": ".5cm", 
+  "margin-bottom": "0mm", 
+  "width": "16cm", 
+  "margin-top": "2mm", 
+  "spacing-header": "2mm", 
+  "margin-right": "1cm", 
+  "height": "10cm", 
+  "firstTemplate": "coverPage"
+ }, 
+ "pageTemplates": {
+  "coverPage": {
+   "frames": [
+    [
+     "0cm", 
+     "0cm", 
+     "100%", 
+     "100%"
+    ]
+   ], 
+   "showFooter": true, 
+   "alignment": "TA_CENTER", 
+   "showHeader": false
+  }, 
+  "cutePage": {
+   "frames": [
+    [
+     "0", 
+     "0", 
+     "100%", 
+     "100%"
+    ]
+   ], 
+   "showFooter": false, 
+   "showHeader": false
+  }
+ }
+}
