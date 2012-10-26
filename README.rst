@@ -22,13 +22,3 @@ Generating slides
 
     % make
 
-License
--------
-
-Copyright (c) 2012 by the authors.
-
-These training materials are released under the Creative Commons
-Attribution 3.0 Unported (`CC BY 3.0`_) license.
-
-.. _CC BY 3.0: http://creativecommons.org/licenses/by/3.0/
-
