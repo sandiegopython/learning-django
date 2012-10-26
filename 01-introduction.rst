@@ -1,15 +1,23 @@
 What is Django?
 ===============
 
-* Django is ...
-* ...
+* Django helps you build a high quality web app
+* 
 
-Installation
-============
+Web Frameworks
+==============
 
-.. code-block:: python
+Starting Your Project
+=====================
 
-    >>> import django
-    >>> print django.VERSION
-    (1, 4, 2, 'final', 0)
+.. code-block:: bash
+
+    % django-admin.py startproject
+
+.. code-block:: bash
+
+    % python ../manage.py runserver
+
+* Point your browser to http://localhost:8000
+* If you see "It worked!", you're all ready
 
