@@ -5,9 +5,8 @@
 .. to start developing their own Django application.
 
 
-.. class:: title
-
 Django Setup
+============
 
 
 Python Installation
@@ -34,11 +33,3 @@ Verifying Your Installation
     (1, 4, 2, 'final', 0)
 
 Now you're ready to create a web site!
-
-
-
-.. footer::
-
-  |pythonsd|
-
-.. |pythonsd| image:: assets/img/pythonsd.png
