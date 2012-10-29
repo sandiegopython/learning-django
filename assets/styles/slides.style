@@ -2,6 +2,9 @@
  "styles": {
   "normal": {
    "fontSize": "125%"
+  }, 
+  "footer": {
+    "alignment": "TA_RIGHT"
   }
  }, 
  "pageSetup": {
