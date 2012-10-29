@@ -10,12 +10,12 @@
  "pageSetup": {
   "spacing-footer": "0mm", 
   "margin-gutter": "0cm", 
-  "margin-left": ".5cm", 
-  "margin-bottom": "0mm", 
-  "width": "16cm", 
   "margin-top": "2mm", 
+  "margin-bottom": "2mm", 
+  "margin-left": ".5cm", 
+  "margin-right": ".5cm", 
+  "width": "16cm", 
   "spacing-header": "2mm", 
-  "margin-right": "1cm", 
   "height": "10cm", 
   "firstTemplate": "coverPage"
  }, 
