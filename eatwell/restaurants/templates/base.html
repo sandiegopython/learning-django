@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pley</title>
+        <title>Pley - {{ title }}</title>
     </head>
     <body>
         <nav>
@@ -10,6 +10,7 @@
         </nav>
         <header>
             <h1>Pley</h1>
+            <h2>{{ title }}</h2>
         </header>
         {% block content %}{% endblock %}
     </body>
