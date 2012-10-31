@@ -1,15 +1,22 @@
 .PHONY: clean
+.PHONY: all
 
 RST2PDF=rst2pdf
 OUTDIR=out
 FLAGS=-b1 -s assets/styles/slides.style
 
-all:
-	mkdir -p $(OUTDIR)
-	$(RST2PDF) 00-setup.rst        $(FLAGS) -o $(OUTDIR)/00-setup.pdf
-	$(RST2PDF) 01-introduction.rst $(FLAGS) -o $(OUTDIR)/01-introduction.pdf
-	$(RST2PDF) 02-mvc.rst          $(FLAGS) -o $(OUTDIR)/02-mvc.pdf
-	$(RST2PDF) 03-yourfirstapp.rst $(FLAGS) -o $(OUTDIR)/03-yourfirstapp.pdf
+SOURCES=$(wildcard [0-9]*.rst)
+OBJECTS=$(SOURCES:%.rst=$(OUTDIR)/%.pdf)
+
+all: $(OUTDIR) $(OBJECTS)
+	@echo "Done"
+
+$(OUTDIR)/%.pdf: %.rst 
+	$(RST2PDF) $< $(FLAGS) -o $@
+
+$(OUTDIR):
+	mkdir $@
+
 
 clean:
 	rm -rf out/
