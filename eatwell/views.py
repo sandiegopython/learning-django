@@ -1,10 +1,9 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def home(request):
     """A simple page containing just "Hello world!\""""
-    return HttpResponse("Hello world!" '<a href="/contact">Contact us</a>')
+    return render(request, "home.html")
 
 
 def contact(request):
