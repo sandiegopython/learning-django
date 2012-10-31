@@ -8,3 +8,6 @@ class Restaurant(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     zip_code = models.CharField(max_length=10)
+
+    def __unicode__(self):
+        return self.name
