@@ -4,14 +4,8 @@
 {% for restaurant in restaurants %}
 <section>
     Name: {{ restaurant.name }}<br>
-    Address:<br>
-    {% if restaurant.city %}
-        {{ restaurant.address1 }}<br>
-        {% if restaurant.address2 %}
-        {{ restaurant.address2 }}<br>
-        {% endif %}
-        {{ restaurant.city }}, {{ restaurant.state }} {{ restaurant.zip_code }}
-    {% endif %}
+    Address:
+    {{ restaurant.address|linebreaksbr }}
 </section>
 {% endfor %}
 {% endblock content %}
