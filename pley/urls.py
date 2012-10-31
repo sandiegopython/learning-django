@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'pley.views.home', name='home'),
      url(r'^contact$', 'pley.views.contact', name='contact'),
+     url(r'^restaurants/$', 'pley.views.restaurant_list', name='restaurants'),
     # url(r'^pley/', include('pley.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
