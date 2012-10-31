@@ -8,5 +8,21 @@ def home(request):
 
 def contact(request):
     """Page stating our contact information"""
-    return HttpResponse("Contact information: 888.888.8888"
-                        '<a href="/">Back home</a>')
+    return HttpResponse("""
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Contact Us</title>
+            </head>
+            <body>
+                <nav>
+                    <a href="/">Home</a>
+                </nav>
+                <header><h2>Contact Us</h2></header>
+                <p>
+                <strong>Phone:</strong> 888.888.8888<br>
+                <strong>Email:</strong> pley@example.com
+                </p>
+            </body>
+        </html>
+    """)
