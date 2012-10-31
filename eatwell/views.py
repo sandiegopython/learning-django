@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
@@ -8,21 +9,4 @@ def home(request):
 
 def contact(request):
     """Page stating our contact information"""
-    return HttpResponse("""
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <title>Contact Us</title>
-            </head>
-            <body>
-                <nav>
-                    <a href="/">Home</a>
-                </nav>
-                <header><h2>Contact Us</h2></header>
-                <p>
-                <strong>Phone:</strong> 888.888.8888<br>
-                <strong>Email:</strong> eatwell@example.com
-                </p>
-            </body>
-        </html>
-    """)
+    return render(request, "contact.html")
