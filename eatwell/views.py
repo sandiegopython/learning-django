@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 from restaurants.models import Restaurant
 
@@ -28,17 +29,17 @@ class Contact(TemplateView):
 contact = Contact.as_view()
 
 
-class RestaurantListView(TemplateView):
+class RestaurantListView(ListView):
 
     """Page to list all restaurants"""
 
     template_name = 'restaurant_list.html'
+    model = Restaurant
+    context_object_name = 'restaurants'
 
-    def get_context_data(self):
-        return {
-            'title': "Restaurants",
-            'restaurants': Restaurant.objects.all(),
-        }
+    def get_context_data(self, **kwargs):
+        kwargs['title'] = "Restaurants"
+        return super(RestaurantListView, self).get_context_data(**kwargs)
 
 restaurant_list = RestaurantListView.as_view()
 
