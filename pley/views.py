@@ -40,3 +40,22 @@ class RestaurantListView(TemplateView):
         }
 
 restaurant_list = RestaurantListView.as_view()
+
+
+class RestaurantDetailView(TemplateView):
+
+    """Page displaying details for an individual restaurant"""
+
+    template_name = 'restaurant_detail.html'
+
+    def get(self, request, restaurant_id):
+        self.restaurant = Restaurant.objects.get(id=restaurant_id)
+        return super(RestaurantDetailView, self).get(request, restaurant_id)
+
+    def get_context_data(self):
+        return {
+            'title': "Restaurant: {0}".format(self.restaurant.name),
+            'restaurant': self.restaurant,
+        }
+
+detail = RestaurantDetailView.as_view()

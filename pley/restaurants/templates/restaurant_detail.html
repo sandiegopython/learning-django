@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    Name: {{ restaurant.name }}<br>
+    Address:
+    {{ restaurant.address|linebreaksbr }}
+</section>
+{% endblock content %}
