@@ -9,7 +9,7 @@ urlpatterns = patterns('',
      url(r'^$', 'pley.views.home', name='home'),
      url(r'^contact$', 'pley.views.contact', name='contact'),
      url(r'^restaurants/$', 'pley.views.restaurant_list', name='restaurants'),
-     url(r'^restaurants/(?P<restaurant_id>\d+)/$', 'pley.views.detail',
+     url(r'^restaurants/(?P<pk>\d+)/$', 'pley.views.detail',
          name='restaurant'),
     # url(r'^pley/', include('pley.foo.urls')),
 

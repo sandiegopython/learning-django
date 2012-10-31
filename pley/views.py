@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.shortcuts import get_object_or_404
+from django.views.generic.detail import DetailView
 
 from restaurants.models import Restaurant
 
@@ -43,20 +43,17 @@ class RestaurantListView(TemplateView):
 restaurant_list = RestaurantListView.as_view()
 
 
-class RestaurantDetailView(TemplateView):
+class RestaurantDetailView(DetailView):
 
     """Page displaying details for an individual restaurant"""
 
     template_name = 'restaurant_detail.html'
+    model = Restaurant
 
-    def get(self, request, restaurant_id):
-        self.restaurant = get_object_or_404(Restaurant, id=restaurant_id)
-        return super(RestaurantDetailView, self).get(request, restaurant_id)
-
-    def get_context_data(self):
-        return {
-            'title': "Restaurant: {0}".format(self.restaurant.name),
-            'restaurant': self.restaurant,
-        }
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'title': "Restaurant: {0}".format(self.object.name),
+        })
+        return super(RestaurantDetailView, self).get_context_data(**kwargs)
 
 detail = RestaurantDetailView.as_view()
