@@ -10,7 +10,7 @@ What is Django?
 How Does Data Move About
 ========================
 * Browser --> Server --> *magic!* --> Django!
-* let's ignore the magic, it's outside the scope of django anways
+* let's ignore the magic, it's outside the scope of django anyways
 
 
 URLs and Back Again
