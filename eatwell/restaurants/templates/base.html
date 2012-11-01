@@ -13,6 +13,15 @@
             <h1>Pley</h1>
             <h2>{{ title }}</h2>
         </header>
+        <section>
+            {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </section>
         {% block content %}{% endblock %}
     </body>
 </html>
