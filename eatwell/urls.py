@@ -11,6 +11,8 @@ urlpatterns = patterns('',
      url(r'^restaurants/$', 'eatwell.views.restaurant_list', name='restaurants'),
      url(r'^restaurants/(?P<pk>\d+)/$', 'eatwell.views.detail',
          name='restaurant'),
+     url(r'^restaurants/(?P<pk>\d+)/review$', 'eatwell.views.create_review',
+         name='create_review'),
     # url(r'^eatwell/', include('eatwell.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
