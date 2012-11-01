@@ -1,6 +1,7 @@
 What is Django?
 ===============
 
+* Django is a web application framework, written in python programming language
 * Django helps you build a high quality web app
 * A MVC framework 
     * Traditionally it's Model, View, Controller
