@@ -11,6 +11,8 @@ urlpatterns = patterns('',
      url(r'^restaurants/$', 'pley.views.restaurant_list', name='restaurants'),
      url(r'^restaurants/(?P<pk>\d+)/$', 'pley.views.detail',
          name='restaurant'),
+     url(r'^restaurants/(?P<pk>\d+)/review$', 'pley.views.create_review',
+         name='create_review'),
     # url(r'^pley/', include('pley.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
