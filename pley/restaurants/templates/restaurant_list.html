@@ -7,7 +7,7 @@
     Address:
     {{ restaurant.address|linebreaksbr }}
     <br>
-    <a href="{% url restaurant restaurant.pk %}">View Restaurant Page</a>
+    <a href="{{ restaurant.get_absolute_url }}">View Restaurant Page</a>
 </section>
 {% endfor %}
 {% endblock content %}
