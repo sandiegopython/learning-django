@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, get_object_or_404
+from django.contrib import messages
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -81,6 +82,7 @@ class CreateReviewView(TemplateView):
             review = self.form.save(commit=False)
             review.restaurant = self.restaurant
             review.save()
+            messages.info(request, "Thank you for your review.")
             return redirect(self.restaurant)
         return self.render_to_response(self.get_context_data(request, pk))
 
