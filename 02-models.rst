@@ -48,6 +48,13 @@ Django Shell
   python manage.py shell
 
 
+
+Making changes to the model
+===========================
+
+  run syncDB again
+
+
 Django ORM
 ==========
 
@@ -55,18 +62,18 @@ ORM - Object Relation Mapper
 Helps fetching data from the database.
 
 
-all()
+all() - Returns all instances of a model. Example, returns all Restaurants. 
 
 .. code-block:: python
 
     Employees.objects.all()
 
 
-get()
+get() - Returns a single instance identified by an id. Example, returns ""
 
 .. code-block:: python
 
-    Employees.objects.all()
+    Employees.objects.get(10)
 
 
 
@@ -75,6 +82,22 @@ Creating the list of restaurants
 
 Connecting the View and the models
 
+1. URLS
 
+  define a url for restaurants and assign a method
+
+2. Define the method
+
+  # copy method from trey here
+
+3. ORM
+
+  # copy method from trey here
+
+4. Response (template)
+
+  # copy method from trey here
+  
+  
 
 
