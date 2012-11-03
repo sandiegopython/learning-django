@@ -34,6 +34,7 @@ the restaurant review application. Some suggestions for features include:
 
 * Add a phone number field to restaurants
 * Add the ability to search for restaurants by zip code
+* Rewrite CreateReviewView to use django.views.generic.edit.CreateView
 * Add a 1-5 star rating system for reviews and calculate average
 
 
