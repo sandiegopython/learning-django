@@ -1,6 +1,0 @@
-Pygments==1.5
-docutils==0.9.1
-pdfrw==0.1
-reportlab==2.6
-PIL==1.1.7
--e svn+http://rst2pdf.googlecode.com/svn/trunk/#egg=rst2pdf

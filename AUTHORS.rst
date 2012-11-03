@@ -1,2 +1,0 @@
-* David Fischer
-* Bharad
