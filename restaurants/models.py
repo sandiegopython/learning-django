@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.localflavor.us.models import USStateField
 
 
 class Restaurant(models.Model):
@@ -6,7 +7,7 @@ class Restaurant(models.Model):
     address1 = models.CharField(max_length=50, blank=True)
     address2 = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
-    state = models.CharField(max_length=2, blank=True)
+    state = USStateField(max_length=2, blank=True)
     zip_code = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):
