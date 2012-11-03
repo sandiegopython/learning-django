@@ -86,7 +86,7 @@ class CreateReviewView(TemplateView):
             return redirect(self.restaurant)
         return self.render_to_response(self.get_context_data(request, pk))
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         return {
             'restaurant': self.restaurant,
             'form': self.form
