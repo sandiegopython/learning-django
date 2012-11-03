@@ -6,4 +6,15 @@
     Address:
     {{ restaurant.address|linebreaksbr }}
 </section>
+<h3>Reviews</h3>
+{% for review in reviews %}
+<section>
+    <h4>{{ review.title }}</h4>
+    {{ review.body|linebreaks }}
+</section>
+{% empty %}
+<section>
+    No reviews yet.
+</section>
+{% endfor %}
 {% endblock content %}
