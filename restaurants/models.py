@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import urlresolvers
 from django.contrib.localflavor.us.models import USStateField
 
 
@@ -18,6 +19,9 @@ class Restaurant(models.Model):
         if self.address2:
             address += "\n" + self.address2
         return address + "\n{s.city}, {s.state} {s.zip_code}".format(s=self)
+
+    def get_absolute_url(self):
+        return urlresolvers.reverse('restaurant', args=[self.pk])
 
     def __unicode__(self):
         return self.name
