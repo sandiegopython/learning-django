@@ -25,3 +25,12 @@ class Restaurant(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Review(models.Model):
+    restaurant = models.ForeignKey(Restaurant)
+    title = models.CharField(max_length=100)
+    body = models.TextField(max_length=1000)
+
+    def __unicode__(self):
+        return self.title
