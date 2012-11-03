@@ -6,6 +6,8 @@
     Name: {{ restaurant.name }}<br>
     Address:
     {{ restaurant.address|linebreaksbr }}
+    <br>
+    <a href="/restaurants/{{ restaurant.pk }}">View Restaurant Page</a>
 </section>
 {% endfor %}
 {% endblock content %}
