@@ -18,54 +18,56 @@ What do forms look like
 
     from django import forms
 
-    class RestaurantForm(forms.Form):
-        name = forms.CharField()
-        address1 = forms.CharField()
-        address2 = forms.CharField()
-        city = forms.CharField()
-        state = forms.CharField()
-        zip_code = forms.IntegerField()
+    class ReviewForm(forms.Form):
+        title = forms.CharField()
+        body = forms.CharField()
+
+.. Regex validators, number within set of values, etc.
+.. Date widgets, mutliple select widgets, etc.
+
+* Custom validators
+* Custom widgets
+* Groups of forms
 
 
-Wiring it up
-============
+Using forms with class-based views
+==================================
 
-.. Briefly mention GET and POST requests
-.. Discuss the three code paths through this code
-.. Show an error so they can see validation in action
+.. Discuss GET vs. POST requests
+.. Mention form verification and show empty form submission
 
 .. code-block:: python
 
-    from django.shortcuts import render
-    from django.http import HttpResponseRedirect
-    from .models import Restaurant
-    
-    def add_restaurant(request):
-        if request.method == 'POST': # If the form has been submitted...
-            form = RestaurantForm(request.POST) # A form bound to the POST data
-            if form.is_valid(): # All validation rules pass
-                # Process the data in form.cleaned_data
-                # Save a new restaurant
-                return HttpResponseRedirect('/thanks/') # Redirect after POST
-        else:
-            form = RestaurantForm() # An unbound form
-    
-        return render(request, 'contact.html', {
-            'form': form,
-        })
+   class CreateReviewView(TemplateView):
+       template_name = 'create_review.html'
+   
+       def get(self, request, pk):
+           self.restaurant = get_object_or_404(Restaurant, pk=pk)
+           self.form = ReviewForm()
+           return super(CreateReviewView, self).get(request, pk)
+   
+       def post(self, request, pk):
+           self.restaurant = get_object_or_404(Restaurant, pk=pk)
+           self.form = ReviewForm(request.POST)
+           if self.form.is_valid():
+               review = self.form.save(commit=False)
+               review.restaurant = self.restaurant
+               review.save()
+               return redirect(self.restaurant)
+           return self.render_to_response(self.get_context_data(request, pk)) 
 
 
-Wiring it up part two
-=====================
+Displaying forms with templates
+===============================
 
 .. Don't go into detail on CSRF other than it is a Django security feature
 
 .. code-block:: html
 
-    <form action="{% url restaurants.views.add_restaurant %}" method="post">
+    <form action="{% url restaurants.views.add_review %}" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Write Review" />
     </form>
 
 
@@ -75,11 +77,12 @@ There's a shortcut! Model forms
 .. code-block:: python
 
     from django import forms
-    from .models import Restaurant
+    from .models import Review
 
-    class RestaurantForm(forms.ModelForm):
+    class ReviewForm(forms.ModelForm):
         class Meta:
-            model = Restaurant
+            model = Review
+
 
 Model form advantages
 =====================
@@ -89,11 +92,19 @@ Model form advantages
 * Keep it **DRY**!
 
 
-Additional Django features
-==========================
+Debugging forms
+===============
 
-* Users, authentication and permissions
-* Internationalization and localization
-* Excellent security features
-* Much much more!
+.. code-block:: python
 
+    % python manage.py shell
+    >>> from restuarants.forms import ReviewForm
+    >>> from restaurants.models import Restaurant
+    >>> restaurant = Restaurant.objects.get(pk=1)
+    >>> form = ReviewForm({
+    ...     'title': 'Yum',
+    ...     'body': 'Burgers are great!'}, instance=restaurant)
+    >>> form.is_valid()
+    True
+    >>> form.save()
+    
