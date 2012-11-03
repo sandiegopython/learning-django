@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
 
 from restaurants.models import Restaurant
 
@@ -49,7 +50,7 @@ class RestaurantDetailView(TemplateView):
     template_name = 'restaurant_detail.html'
 
     def get(self, request, restaurant_id):
-        self.restaurant = Restaurant.objects.get(id=restaurant_id)
+        self.restaurant = get_object_or_404(Restaurant, id=restaurant_id)
         return super(RestaurantDetailView, self).get(request, restaurant_id)
 
     def get_context_data(self):
