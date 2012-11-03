@@ -16,9 +16,10 @@ Example:
     from django.db import models
 
     class Restaurant(models.Model):
-        name = forms.CharField()
-        address = forms.CharField()
-        city = forms.CharField()
+        name = models.CharField(max_length=300)
+        address1 = models.CharField(max_length=50)
+        zip_code = models.CharField(max_length=10)
+
 
 Quick Notes:
     * models.Model is a superclass
@@ -38,8 +39,6 @@ syncDB - Creates the table based on the class definition.
 
 
 
-
-
 Testing your Models
 ===================
 
@@ -47,12 +46,6 @@ Django Shell
 
   python manage.py shell
 
-
-
-Making changes to the model
-===========================
-
-  run syncDB again
 
 
 Django ORM
@@ -80,23 +73,6 @@ get() - Returns a single instance identified by an id. Example, returns ""
 Creating the list of restaurants
 ================================
 
-Connecting the View and the models
-
-1. URLS
-
-  define a url for restaurants and assign a method
-
-2. Define the method
-
-  # copy method from trey here
-
-3. ORM
-
-  # copy method from trey here
-
-4. Response (template)
-
-  # copy method from trey here
   
   
 
