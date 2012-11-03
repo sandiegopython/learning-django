@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from restaurants.models import Restaurant
+from restaurants.models import Restaurant, Review
 
 
 class Home(TemplateView):
@@ -54,6 +54,7 @@ class RestaurantDetailView(DetailView):
     def get_context_data(self, **kwargs):
         kwargs.update({
             'title': "Restaurant: {0}".format(self.object.name),
+            'reviews': Review.objects.filter(restaurant=self.object),
         })
         return super(RestaurantDetailView, self).get_context_data(**kwargs)
 
