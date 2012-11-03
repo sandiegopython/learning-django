@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    """A simple page containing just "Hello world!\""""
-    return render(request, "home.html")
+    """EatWell homepage"""
+    return render(request, "home.html", {'title': "Home"})
 
 
 def contact(request):
     """Page stating our contact information"""
-    return render(request, "contact.html")
+    return render(request, "contact.html", {'title': "Contact Us"})
