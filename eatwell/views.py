@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -71,6 +72,13 @@ class CreateReviewView(TemplateView):
     def get(self, request, pk):
         self.form = ReviewForm()
         return super(CreateReviewView, self).get(request, pk)
+
+    def post(self, request, pk):
+        self.form = ReviewForm(request.POST)
+        if self.form.is_valid():
+            review = self.form.save()
+            return redirect(review)
+        return self.render_to_response(self.get_context_data(request, pk))
 
     def get_context_data(self, **kwargs):
         return {'form': self.form}
