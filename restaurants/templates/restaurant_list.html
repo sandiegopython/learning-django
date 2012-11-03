@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ restaurants }}
+{% for restaurant in restaurants %}
+<section>
+    Name: {{ restaurant.name }}
+</section>
+{% endfor %}
 {% endblock content %}
