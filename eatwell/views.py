@@ -10,7 +10,7 @@ from restaurants.forms import ReviewForm
 
 class Home(TemplateView):
 
-    """Pley homepage"""
+    """EatWell homepage"""
 
     template_name = 'home.html'
 
