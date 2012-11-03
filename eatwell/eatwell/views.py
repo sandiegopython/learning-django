@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -70,17 +70,24 @@ class CreateReviewView(TemplateView):
     template_name = 'create_review.html'
 
     def get(self, request, pk):
+        self.restaurant = get_object_or_404(Restaurant, pk=pk)
         self.form = ReviewForm()
         return super(CreateReviewView, self).get(request, pk)
 
     def post(self, request, pk):
+        self.restaurant = get_object_or_404(Restaurant, pk=pk)
         self.form = ReviewForm(request.POST)
         if self.form.is_valid():
-            review = self.form.save()
-            return redirect(review)
+            review = self.form.save(commit=False)
+            review.restaurant = self.restaurant
+            review.save()
+            return redirect(self.restaurant)
         return self.render_to_response(self.get_context_data(request, pk))
 
     def get_context_data(self, **kwargs):
-        return {'form': self.form}
+        return {
+            'restaurant': self.restaurant,
+            'form': self.form
+        }
 
 create_review = CreateReviewView.as_view()
