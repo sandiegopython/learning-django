@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EatWell - {{ title }}</title>
+        <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="#">EatWell</a>
+            <ul class="nav">
+              <li><a href="{% url home %}">Home</a></li>
+              <li><a href="{% url contact %}">Contact</a></li>
+              <li><a href="{% url restaurants %}">Restaurants</a></li>
+            </ul>
+          </div>
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="row-fluid">
+          <div class="span12">
+            <h2>{{ title }}</h2>
+            {% block content %}{% endblock %}
+          </div>
+        </div>
+    </div>
+    </body>
+</html>
