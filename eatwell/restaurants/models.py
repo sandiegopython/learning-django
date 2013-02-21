@@ -1,6 +1,7 @@
 from django.db import models
 from django.core import urlresolvers
 from django.contrib.localflavor.us.models import USStateField
+from django.contrib.auth.models import User
 
 
 class Restaurant(models.Model):
@@ -31,6 +32,7 @@ class Review(models.Model):
     restaurant = models.ForeignKey(Restaurant)
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=1000)
+    user = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.title
