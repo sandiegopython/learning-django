@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
      url(r'^$', 'eatwell.views.home', name='home'),
+     url(r'^api/restaurants/', include('restaurants.api_urls')),
      url(r'^contact$', 'eatwell.views.contact', name='contact'),
      url(r'^restaurants/', include('restaurants.urls')),
      url(r'^admin/', include(admin.site.urls)),

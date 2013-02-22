@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-from django.conf import settings
 
 urlpatterns = patterns('restaurants.views',
      url(r'^$', 'restaurant_list', name='restaurants'),

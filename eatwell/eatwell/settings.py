@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     # third party apps
     'south',
     'debug_toolbar',
+    'rest_framework',
 )
 
 DEBUG_TOOLBAR_CONFIG = {
