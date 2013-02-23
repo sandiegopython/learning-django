@@ -1,13 +1,22 @@
 {% extends "base.html" %}
+{% load restaurants_tags %}
+
+{% block head %}
+  <script type='text/javascript'>
+    {% include "restaurants/js/restaurants.js" %}
+  </script>
+{% endblock head %}
 
 {% block content %}
-{% for restaurant in restaurants %}
-<section>
-    Name: {{ restaurant.name }}<br>
-    Address:
-    {{ restaurant.address|linebreaksbr }}
-    <br>
-    <a href="{{ restaurant.get_absolute_url }}">View Restaurant Page</a>
-</section>
-{% endfor %}
+{% verbatim %}
+<div ng-controller='Restaurants'>
+  <section ng-repeat='restaurant in restaurants'>
+      Name: {{ restaurant.name }}<br>
+      Address:
+      {{ restaurant.address1 }}
+      <br>
+      <a href="{{ restaurant.get_absolute_url }}">View Restaurant Page</a>
+  </section>
+</div>
+{% endverbatim %}
 {% endblock content %}
