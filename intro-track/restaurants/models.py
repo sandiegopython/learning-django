@@ -10,13 +10,13 @@ class Restaurant(models.Model):
     zip_code = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):
-    	return self.name
+        return self.name
 
 
 class Review(models.Model):
-	title = models.CharField(max_length=80)
-	review = models.TextField()
-	restaurant = models.ForeignKey(Restaurant)
+    title = models.CharField(max_length=80)
+    review = models.TextField()
+    restaurant = models.ForeignKey(Restaurant)
 
-	def __unicode__(self):
-		return self.title
+    def __unicode__(self):
+        return self.title
