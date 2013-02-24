@@ -1,0 +1,280 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\usepackage{hyperref}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[rounded=false,shadow=false]
+
+\title{The Django Ecosystem}
+\subtitle{and you}
+
+\author{Trey Hunner}
+\institute{Django Day}
+\date{February 23, 2013}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{section}{How to get help}
+
+  \begin{frame}{Where should I go to get help?}
+    How I seek help on a Django-related problem:
+
+    \begin{enumerate}
+      \item Think of search terms that describe the problem
+      \item Search Duck Duck Go and/or Google
+      \item Search StackOverflow
+      \item Search documentation
+      \item Discover more search terms and start again at step 1
+    \end{enumerate}
+  \end{frame}
+
+  \begin{frame}{Refreshing your memory}
+    You have a function/class but don't know how to use it.
+
+    \begin{enumerate}
+      \item For Django built-ins try \href{https://github.com/jacobian/djangome\#readme}{http://django.me}
+      \item Consult the documentation
+      \item Read the code
+      \pause
+      \item \bf Read the code
+    \end{enumerate}
+  \end{frame}
+
+  \begin{frame}{How to read the code}
+    How should I read the code?
+
+    \begin{description}
+      \item[Good] Find the code on Github and read in Firefox
+      \item[Better] Find the code on your computer and read in your IDE
+      \item[Best] Use ``jump to definition'' to open code in your IDE
+    \end{description}
+
+    \pause
+    Jumping to code definitions is supported in PyCharm, Wing IDE, Vim, and many other IDEs.
+  \end{frame}
+
+\end{section}
+
+\begin{section}{Community}
+
+  \begin{frame}{Stuff you should consume}
+    \begin{itemize}
+      \item Books \& Videos
+      \item Newsletters \& Mailing Lists
+      \item IRC
+      \item Blogs
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Books \& Videos}
+    Books:
+
+    \begin{itemize}
+      \item \href{https://django.2scoops.org/}{Two Scoops of Django} (not free, but really really useful)
+      \item The \href{http://www.djangobook.com/en/2.0/index.html}{Django Book} (useful if you've never read it)
+    \end{itemize}
+
+    Videos:
+
+    \begin{itemize}
+      \item \href{http://pyvideo.org/}{pyvideo.org} (big index of Python talks)
+      \item \href{https://pycon-2012-notes.readthedocs.org/en/latest/index.html}{Marc Abramowitz's PyCon 2012 Notes}
+    \end{itemize}
+
+  \end{frame}
+
+
+  \begin{frame}{Mailing Lists}
+    You should subscribe to:
+
+    \begin{itemize}
+      \item \href{http://pycoders.com/}{PyCoder's Weekly} (you must subscribe to this)
+      \item \href{https://groups.google.com/forum/?fromgroups\#!forum/django-users}{django-users list}
+      \item \href{https://groups.google.com/forum/?fromgroups\#!forum/django-developers}{django-developers list} (for Django devs to chat publicly)
+      \item the mailing list of your favorite Django projects
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{IRC Rooms}
+
+    {\bf First}: Register a nickname on FreeNode.net.
+
+    {\bf Next}: Join IRC channels:
+
+    \begin{itemize}
+      \item \#django for general chatting and help (read \href{https://code.djangoproject.com/wiki/IrcFAQ}{the FAQ})
+      \item \#sandiegopython (there's always someone sitting in there)
+      \item the IRC channels for your favorite projects.  Examples:
+        \begin{itemize}
+          \item \#django-compressor
+          \item \#restframework
+          \item \#haystack
+          \item \#fabric
+        \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Blogs to follow}
+    \begin{itemize}
+      \item \href{https://www.djangoproject.com/weblog/}{Django Weblog}: the official blog
+      \item \href{http://www.planetdjango.org/}{Planet Django}: reposts from everywhere
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{More blogs to read}
+    These don't update frequently, but you should {\bf read the archives}.
+
+    \begin{itemize}
+      \item \href{https://www.djangoproject.com/weblog/}{Hackers Gonna Hack}
+      \item \href{http://procrastinatingdev.com/}{Procrastinating Dev}
+      \item \href{http://toastdriven.com/}{Toast Driven}
+      \item \href{http://pydanny.com/}{Inside the head of PyDanny}
+      \item \href{http://harkablog.com/}{Hark! A Blog}
+      \item \href{http://jacobian.org/writing/}{Jacob Kaplan-Moss' Blog}
+      \item \href{http://blog.roseman.org.uk/}{Daniel Roseman's Blog}
+      \item \href{http://ericholscher.com/blog/}{Surfing in Kansas}
+    \end{itemize}
+
+    I added just enough blogs to fit on this slide.  There might be more.
+  \end{frame}
+
+\end{section}
+
+\begin{section}{Finding code you can use}
+
+  \begin{frame}{Where do I go to find code?}
+    \begin{itemize}
+      \item \href{http://djangosnippets.org/}{DjangoSnippets.org}: small bits of code
+      \item \href{https://www.djangopackages.com/}{DjangoPackages.com}: large directory of Django apps
+      \item \href{http://stackoverflow.com/}{StackOverflow.com}: answers often contain\ldots
+      \begin{itemize}
+        \item useful code snippets
+        \item links to useful Django apps
+      \end{itemize}
+    \item \href{https://github.com/}{GitHub}
+    \item \href{https://bitbucket.org/}{Bitbucket}
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{I found some code, should I use it?}
+    I found some code on Github.  Should I use it?
+
+    \begin{description}
+      \item[Yes] Why write new code when you can reuse code?
+      \item[No] Someone else wrote it.  It could be buggy.
+      \item[Maybe] You need to evaluate your options.
+    \end{description}
+  \end{frame}
+
+\end{section}
+
+\begin{section}{Evaluating code}
+
+  \begin{frame}{How to evaluate code you found online}
+    When evaluating new code ask\ldots
+
+    \begin{enumerate}
+      \item Is it fresh?
+      \item Is it well-tested?
+      \item Is it popular?
+      \item Is it hackable?
+    \end{enumerate}
+  \end{frame}
+
+  \begin{frame}{Is the code fresh?}
+    \begin{itemize}
+      \item Does this work in the newest version of Django?
+      \item When was the last commit?
+      \item When was the last mentioned of this package on blogs/StackOverflow?
+    \end{itemize}
+
+    \bigskip
+    Most relevant for full projects, but could apply to code snippets.
+  \end{frame}
+
+  \begin{frame}{Is the code well-tested?}
+    \begin{itemize}
+      \item Are there tests?
+      \item Are they quality tests?
+      \item What does the code coverage look like?
+    \end{itemize}
+
+    \bigskip
+    Most relevant for projects that don't have a very large community.
+  \end{frame}
+
+  \begin{frame}{Is the code popular?}
+    \begin{itemize}
+      \item How many stars or followers are there?
+      \item How many forks, committers, closed issues and pull requests?
+      \item Is it recommended on any blogs or Q \& A websites?
+    \end{itemize}
+
+    \bigskip
+    Most relevant for large projects, especially when you wouldn't want to maintain your own fork of the code.
+  \end{frame}
+
+  \begin{frame}{Is this code hackable?}
+    \begin{itemize}
+      \item Do you understand how the code works?
+      \item Would you be comfortable fixing bugs or adding features?
+      \item Are the project maintainers accepting of contributions?
+      \item Would you be willing to maintain your own fork of the code?
+    \end{itemize}
+
+    \bigskip
+    Most relevant for projects that may not fit your needs exactly.
+  \end{frame}
+
+\end{section}
+
+\begin{section}{Contributing code}
+
+  \begin{frame}{Reasons you should write open source code}
+    \begin{itemize}
+      \item You'll eventually find a bug\ldots you might as well fix it
+      \item You'll eventually discover a feature you want to add
+      \item It will bring you wealth, fame, and happiness
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Alternatives to open source}
+    Some alternatives to contributing to open source projects:
+
+    \begin{itemize}
+      \item Monkey-patching the code to get the behavior you want
+      \item Fixing/updating the code and maintaining your own fork
+      \item Begging the community to fix your bugs and feature requests
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{How to contribute code}
+    When contributing code to an open source project:
+
+    \begin{enumerate}
+      \item Tell the author what you're planning to do (optional)
+      \item Write tests that should pass after you're done
+      \item Write the code, asking the community for advice as needed
+      \pause
+      \item Write all the tests you forgot to write in step 2
+    \end{enumerate}
+  \end{frame}
+
+  \begin{frame}{In Summary}
+
+    \begin{enumerate}
+      \item Watch a video from PyVideos every day
+      \item Read Two Scoops of Django
+      \item Write code and stuff
+    \end{enumerate}
+  \end{frame}
+
+\end{section}
+
+\end{document}
