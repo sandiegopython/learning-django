@@ -28,7 +28,7 @@ Four talks were given for the intermediate track.
 * @paulcollinsiii: `Django toolbox`_
 * @treyhunner: `Django ecosystem`_ and `Django packages`_
 
-.. _Django security talk: http://django-security.herokuapp.com/
+.. _Django security: http://django-security.herokuapp.com/
 .. _Django toolbox: https://docs.google.com/presentation/d/11CcSamMIAaS87tF8UgN84Ks-jRHhVM_aJniKt8-wUzQ/edit?usp=sharing
 .. _Django ecosystem: http://www.slideshare.net/pythonsd/django-ecosystem
 .. _Django packages: intermediate/packages.md
