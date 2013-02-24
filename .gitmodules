@@ -1,0 +1,3 @@
+[submodule "intermediate-track/securing-your-django-site"]
+	path = intermediate-track/securing-your-django-site
+	url = git://github.com/davidfischer/Securing-Your-Django-Site-Presentation.git
