@@ -2,17 +2,17 @@
 
 {% block content %}
 
-	<h3>{{restaurant.name}}</h3>
-	{{restaurant.address1}}<br/>
-	{{restaurant.address2}}<br/>
+    <h3>{{restaurant.name}}</h3>
+    {{restaurant.address1}}<br/>
+    {{restaurant.address2}}<br/>
 
-	<p>
-	{% for review in reviews %}
-	  {{ review.title }}<br/>
-	  {{ review.review }}
-	{% endfor %}
-	</p>
+    <p>
+    {% for review in reviews %}
+      {{ review.title }}<br/>
+      {{ review.review }}
+    {% endfor %}
+    </p>
 
-	<a href="{% url restaurant_review restaurant.pk %}">Write a review</a>
+    <a href="{% url restaurant_review restaurant.pk %}">Write a review</a>
 
 {% endblock content %}

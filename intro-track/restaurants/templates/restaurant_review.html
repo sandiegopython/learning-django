@@ -2,13 +2,13 @@
 
 {% block content %}
 
-	<h3>{{restaurant.name}}</h3>
-	<h4>Write a Review</h4>
+    <h3>{{restaurant.name}}</h3>
+    <h4>Write a Review</h4>
 
-	<form method="post">
-		{{ form.as_p }}
-		{% csrf_token %}
-		<input type="submit" value="Save Review">
-	</form>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Save Review">
+    </form>
 
 {% endblock content %}

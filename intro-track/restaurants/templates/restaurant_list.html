@@ -4,9 +4,9 @@
 
 {% for r in restaurants %}
 
-	<a href="{% url restaurant_detail r.pk %}">{{r.name}}</a><br/>
-	{{r.address1}}<br/>
-	{{r.address2}}<br/>
+    <a href="{% url restaurant_detail r.pk %}">{{r.name}}</a><br/>
+    {{r.address1}}<br/>
+    {{r.address2}}<br/>
 
 {% endfor %}
 
