@@ -5,6 +5,8 @@ This is a repository for talks and presentations given during San Diego Django
 Day on February 23, 2013.  Django Day was hosted by the
 `San Diego Python Users Group`_
 
+.. _San Diego Python Users Group: http://pythonsd.org
+
 
 Beginner Track
 --------------
