@@ -43,10 +43,11 @@ There were not formal slides for these talks, but each talk was about a
 particular module.
 
 * @t20: `Django compressor`_
-* @zbyte64: `Django hyperadmin`_
+* @zbyte64: `Django hyperadmin`_ (`demo`_)
 * @nikolajbaer: `Django dockit`_
 
 .. _Django compressor: http://django_compressor.readthedocs.org/
 .. _Django hyperadmin: http://django-hyperadmin.readthedocs.org/
 .. _Django dockit: http://django-dockit.readthedocs.org/
+.. _demo: http://hyperadmindemo.herokuapp.com/
 
