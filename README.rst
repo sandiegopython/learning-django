@@ -26,12 +26,13 @@ Four talks were given for the intermediate track.
 
 * @davidfischer: `Django security`_
 * @nikolajbaer: `Django in production`_
-* @paulcollinsiii: `Django toolbox`_
+* @paulcollinsiii: `Django toolbox`_ (original `Google Presentation`_ with speaker notes)
 * @treyhunner: `Django ecosystem`_ and `Django packages`_
 
 .. _Django security: http://django-security.herokuapp.com/
 .. _Django in production: http://www.slideshare.net/pythonsd/django-production
 .. _Django toolbox: http://www.slideshare.net/pythonsd/django-toolbox
+.. _Google Presentation: https://docs.google.com/presentation/d/11CcSamMIAaS87tF8UgN84Ks-jRHhVM_aJniKt8-wUzQ/edit?usp=sharing
 .. _Django ecosystem: http://www.slideshare.net/pythonsd/django-ecosystem
 .. _Django packages: intermediate-track/packages.md
 
